@@ -1,84 +1,40 @@
 import Image from "next/image";
 
-export default function Booking() {
+const Hero = () => {
   return (
-    <section className="relative w-full bg-white">
-      <div className="text-center py-12 px-6 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-serif font-semibold">
-          Make <i>your home</i> an ode to joy
+    <section className="relative w-full max-w-6xl mx-auto px-4 py-12">
+     
+      <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
+        <Image
+          src="/1.png" 
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          className="brightness-75"
+        />
+      </div>
+      <div className="absolute bottom-0 left-10 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg max-w-lg">
+        <span className="text-xs bg-blue-500 text-white px-2 py-1 rounded">
+          Technology
+        </span>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white mt-2">
+          The Impact of Technology on the Workplace: How Technology is Changing
         </h1>
-        <p className="mt-4 text-gray-600">
-          We turn your empty house into a lovely home, making compact spaces
-          with space-saving furniture. Making the unique tastes of yours into
-          reality!
-        </p>
-      </div>
-
-      <div className="relative w-full max-w-auto mx-auto">
-        <Image
-          src="/image2.png" 
-          alt="Interior Design"
-          width={1600}
-          height={900}
-          className="w-full rounded-lg"
-        />
-      </div>
-
-      <div className=" bg-black text-white py-8 px-6 text-center flex flex-col md:flex-row justify-center items-center gap-6">
-       <div><p className="[writing-mode:vertical-rl] [text-orientation:upright]">Avards</p></div>
-        <div className="text-center flex">
-        <Image
-          src="/image3.png" 
-          alt="Interior Design"
-          width={100}
-          height={100}
-          className="block"
-        />
-        <div className="mt-8">
-          <p className="text-lg font-semibold">German Design Award</p>
-          <p className="text-sm text-gray-400">2021</p>
-        </div>
-        </div>
-        <div className="text-center flex">
-        <Image
-          src="/image4.png" 
-          alt="Interior Design"
-          width={100}
-          height={100}
-          className="block"
-        />
-        <div className="mt-8">
-          <p className="text-lg font-semibold">Gold A’ Design Award</p>
-          <p className="text-sm text-gray-400">2021</p>
-        </div>
-        </div>
-        <div className="text-center flex">
-        <Image
-          src="/image5.png" 
-          alt="Interior Design"
-          width={100}
-          height={100}
-          className="block"
-        />
-        <div className="mt-8">
-          <p className="text-lg font-semibold">IF Design Award</p>
-          <p className="text-sm text-gray-400">2021</p>
-        </div>
-        </div>
-        <div className="text-center flex">
-        <Image
-          src="/image6.png" 
-          alt="Interior Design"
-          width={100}
-          height={100}
-          className="block"
-        />
-        <div className="mt-8">
-          <p className="text-lg font-semibold">Good Design Award</p>
-          <p className="text-sm text-gray-400">2021</p>
-        </div>
+        <div className="flex items-center gap-2 mt-4">
+          <Image
+            src="/logo1.png" 
+            alt="User"
+            width={40}
+            height={40}
+          />
+          <div>
+            <p className="text-sm text-gray-700 dark:text-gray-300">Jason Francisco</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">August 20, 2022</p>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

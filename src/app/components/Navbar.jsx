@@ -1,27 +1,43 @@
 "use client";
 import Image from "next/image";
+import Logo from "../../../public/Logo.png"
 import Link from "next/link";
-const Navbar = () => {
-  return (
-    <nav className="opacity-95 px-6 text-whitew bg-white py-4 flex justify-between items-center sticky top-0 z-50">
-      <div className="flex items-center"> 
-        <Link href="/" className="text-black">
-        <Image src="/IMAGE.svg" alt="Logo" width={100} height={100} className="mr-2" />
-        </Link>
-      </div>
-      <div className="flex items-center space-x-4">
-        <div className="hidden md:block  justify-between">
-        <Link href="#about-us" className="hover:text-black uppercase mx-4">About  </Link>
-        <Link href="#services" className="hover:text-black uppercase mx-4">Services     </Link>
-        <Link href="#Work" className="hover:text-black uppercase">Our work  </Link>
-        </div>
+import ModeToggle from "../../../components/shared/mode-toggle";
+import { CiSearch } from "react-icons/ci";
+import { useTheme } from "next-themes";
 
-        <Link href="#contact">
-        <span className="bg-amber-600 p-2">Contact us ↗</span>
+const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+}
+  return (
+    <nav className="opacity-98 p-3 flex justify-around sticky top-0 z-30 bg-white dark:bg-black" >
+      <div className="flex mt-2"> 
+        <Link href="/">
+          
+          {theme==="dark"?<Image src="/whiteLogo.png"className="" alt="Logo" width={100} height={100} />:
+          <Image src={Logo} alt="Logo" width={100} height={100} />}
         </Link>
       </div>
+      <div className="flex gap-5">
+        <div className="md:flex gap-4 mt-2">
+          <Link href="./">Home</Link>
+          <Link href="./blog">Blog</Link>
+          <Link href="./single-post">Single post</Link>
+          <Link href="./pages">Pages</Link>
+        <Link href="./contact">Contact</Link>
+        </div>
+      </div>
+        <div className="flex">
+          <div className="flex border-2 mx-4 py-0">
+            <input className=" py-0 " type="text" placeholder="Search" /><button><CiSearch /></button>
+          </div>
+        <ModeToggle onClick={toggleTheme}/>
+        </div>
     </nav>
   );
 };
+
 
 export default Navbar;
