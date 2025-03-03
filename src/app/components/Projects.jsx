@@ -100,11 +100,14 @@ const Projects = () => {
                   {post.title}
                 </h3>
                 <div className="flex items-center mt-4">
+          <Link key={post.id} href='./author' passHref>
+                  
                   <Image src={post.avatar} alt={post.author} width={30} height={30} className="rounded-full" />
                   <div className="ml-2">
                     <p className="text-sm text-gray-700 dark:text-gray-300">{post.author}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">{post.date}</p>
                   </div>
+          </Link>
                 </div>
               </div>
             </div>
